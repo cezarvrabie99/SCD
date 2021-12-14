@@ -1,21 +1,23 @@
 import asyncio
 
 
-@asyncio.coroutine
-def first_coroutine(future, N):
+#@asyncio.coroutine
+async def first_coroutine(future, N):
     count = 0
     for i in range(1, N + 1):
         count += i
-    yield from asyncio.sleep(4)
+    #yield from asyncio.sleep(4)
+    await asyncio.sleep(4)
     future.set_result("coroutine 1 result = " + str(count))
 
 
-@asyncio.coroutine
-def second_coroutine(future, N):
+#@asyncio.coroutine
+async def second_coroutine(future, N):
     count = 1
     for i in range(2, N + 1):
         count *= i
-    yield from asyncio.sleep(3)
+    #yield from asyncio.sleep(3)
+    await asyncio.sleep(3)
     future.set_result("coroutine 2 result = " + str(count))
 
 

@@ -1,22 +1,24 @@
 import asyncio
 
 
-@asyncio.coroutine
-def factorial(number):
+#@asyncio.coroutine
+async def factorial(number):
     f = 1
     for i in range(2, number + 1):
         print("Compute factorial(%s)" % i)
-        yield from asyncio.sleep(1)
+        #yield from asyncio.sleep(1)
+        await asyncio.sleep(1)
         f *= i
     print("Result factorial %s! = %s" % (number, f))
 
 
-@asyncio.coroutine
-def fibonacci(number):
+#@asyncio.coroutine
+async def fibonacci(number):
     a, b = 0, 1
     for i in range(number):
         print("Compute fibnacci(%s)" % i)
-        yield from asyncio.sleep(1)
+        #yield from asyncio.sleep(1)
+        await asyncio.sleep(1)
         a, b = b, a + b
     print("Result fibnacci(%s) = %s" % (number, a))
 
