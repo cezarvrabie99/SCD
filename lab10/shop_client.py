@@ -39,7 +39,7 @@ class client(object):
 
 if __name__ == '__main__':
     ns = Pyro4.naming.locateNS()
-    uri = ns.lookup("lab_10.shop")
+    uri = ns.lookup("lab_10.Shop")
     print(uri)
     Shop = Pyro4.core.Proxy(uri)
     c1 = client('Popescu', 50)
